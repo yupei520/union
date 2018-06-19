@@ -43,7 +43,7 @@ class Database(Model, AuditMixinNullable):
     verbose_name = Column(String(250), unique=True)
     database_name = Column(String(250), unique=True)
     sqlalchemy_uri = Column(String(1024))
-    password = Column(EncryptedType(String(1024), config.get('SECRET_KEY')))
+    # password = Column(EncryptedType(String(1024), config.get('SECRET_KEY')))
 
     export_fields = ('database_name', 'sqlalchemy_uri')
 
@@ -54,22 +54,22 @@ class Database(Model, AuditMixinNullable):
     def name(self):
         return self.verbose_name if self.verbose_name else self.database_name
 
-    @classmethod
-    def get_password_masked_url_from_uri(cls, uri):
-        url = make_url(uri)
-        return cls.get_password_masked_url(url)
-
-    @classmethod
-    def get_password_masked_url(cls, url):
-        url_copy = deepcopy(url)
-        if url_copy.password is not None and url_copy.password != PASSWORD_MASK:
-            url_copy.password = PASSWORD_MASK
-        return url_copy
-
-    def set_sqlalchemy_uri(self, uri):
-        conn = sqla.engine.url.make_url(uri.strip())
-        if conn.password != PASSWORD_MASK and not custom_password_store:
-            # do not over-write the password with the password mask
-            self.password = conn.password
-        conn.password = PASSWORD_MASK if conn.password else None
-        self.sqlalchemy_uri = str(conn)  # hides the password
+    # @classmethod
+    # def get_password_masked_url_from_uri(cls, uri):
+    #     url = make_url(uri)
+    #     return cls.get_password_masked_url(url)
+    #
+    # @classmethod
+    # def get_password_masked_url(cls, url):
+    #     url_copy = deepcopy(url)
+    #     if url_copy.password is not None and url_copy.password != PASSWORD_MASK:
+    #         url_copy.password = PASSWORD_MASK
+    #     return url_copy
+    #
+    # def set_sqlalchemy_uri(self, uri):
+    #     conn = sqla.engine.url.make_url(uri.strip())
+    #     if conn.password != PASSWORD_MASK and not custom_password_store:
+    #         # do not over-write the password with the password mask
+    #         self.password = conn.password
+    #     conn.password = PASSWORD_MASK if conn.password else None
+    #     self.sqlalchemy_uri = str(conn)  # hides the password

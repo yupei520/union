@@ -11,19 +11,18 @@ from flask_appbuilder.models.sqla.interface import SQLAInterface
 from union import app, appbuilder
 
 import union.models.core as models
-from .base import UnionModelView, BaseUnionView
+from union.views.base import UnionModelView, BaseUnionView
 
 
 config = app.config
 
 
-
 class DatabaseView(UnionModelView):
     datamodel = SQLAInterface(models.Database)
-    list_title = _('List Databases')
-    show_title = _('Show Database')
-    add_title = _('Add Database')
-    edit_title = _('Edit Database')
+    list_title = ('List Databases')
+    show_title = ('Show Database')
+    add_title = ('Add Database')
+    edit_title = ('Edit Database')
 
     list_columns = ['database_name', 'creator', 'modified']
     order_columns = ['database_name', 'modified']
@@ -38,9 +37,17 @@ class DatabaseView(UnionModelView):
         'changed_by',
         'changed_on',
     ]
+    base_order = ('changed_on', 'desc')
+    label_columns = {
+        'database_name': ('Database'),
+        'creator': ('Creator'),
+        'changed_on_': ('Last Changed'),
+        'sqlalchemy_uri': ('SQLAlchemy URI'),
+    }
+    add_template = 'union/models/database/add.html'
+    edit_template = 'union/models/database/edit.html'
 
-    add_template = 'union_master/models/database/add.html'
-    edit_template = 'union_master/models/database/edit.html'
 
-
-appbuilder.add_view(DatabaseView, 'Databases', label=__('Databases'), icon='fa-database', category='Sources', category_label=__('Sources'), category_icon='fa-database')
+appbuilder.add_view(DatabaseView, 'Databases', label=('Databases'),
+                    icon='fa-database', category='Sources', category_label=('Sources'),
+                    category_icon='fa-database')

@@ -1,4 +1,3 @@
 from union import db
 
-
-db.create_al
+db.create_all()

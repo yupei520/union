@@ -25,7 +25,7 @@ logging.basicConfig(format='%(asctime)s:%(levelname)s:%(name)s:%(message)s')
 logging.getLogger().setLevel(logging.DEBUG)
 
 APP_DIR = os.path.dirname(__file__)
-CONFIG_MODULE = os.environ.get('UNION_CONFIG', 'union_master.config')
+CONFIG_MODULE = os.environ.get('UNION_CONFIG', 'union.config')
 
 if not os.path.exists(config.DATA_DIR):
     os.makedirs(config.DATA_DIR)

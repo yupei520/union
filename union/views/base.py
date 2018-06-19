@@ -6,12 +6,12 @@ from __future__ import print_function
 from __future__ import unicode_literals
 
 from flask import get_flashed_messages
-from flask_appbuilder import BaseView, ModelView
+from flask.ext.appbuilder import ModelView, BaseView
 from flask_appbuilder.widgets import ListWidget
 from flask_babel import get_locale
 
 from union import conf
-# from union_master.translation.utils import get_language_pack
+# from union.translation.utils import get_language_pack
 
 
 FRONTEND_CONF_KEYS = (
@@ -33,7 +33,7 @@ class BaseUnionView(BaseView):
 
 
 class UnionListWidget(ListWidget):
-    template = 'union_master/fab_overrides/list.html'
+    template = 'union/fab_overrides/list.html'
 
 
 class UnionModelView(ModelView):
@@ -44,4 +44,4 @@ class ListWidgetWithCheckboxes(ListWidget):
     """An alternative to list view that renders Boolean
 
     Works in conjunction with the `checkbox` view."""
-    template = 'union_master/fab_overrides/list_with_checkboxes.html'
+    template = 'union/fab_overrides/list_with_checkboxes.html'

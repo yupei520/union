@@ -11,18 +11,20 @@ import os
 import sys
 import imp
 from flask_appbuilder.security.manager import AUTH_OID, AUTH_REMOTE_USER, AUTH_DB, AUTH_LDAP, AUTH_OAUTH
-basedir = os.path.abspath(os.path.dirname(__file__))
+BASE_DIR = os.path.abspath(os.path.dirname(__file__))
 
 if 'UNION_HOME' in os.environ:
     DATA_DIR = os.environ['UNION_HOME']
 else:
-    DATA_DIR = os.path.join(os.path.expanduser('~'), '.union_master')
+    DATA_DIR = os.path.join(os.path.expanduser('~'), '.union')
+
+PACKAGE_DIR = os.path.join(BASE_DIR, 'static', 'assets')
 
 # Your App secret key
 SECRET_KEY = '\2\1thisismyscretkey\1\2\e\y\y\h'
 
 # The SQLAlchemy connection string.
-SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'union_master.db')
+SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(BASE_DIR, 'union.db')
 #SQLALCHEMY_DATABASE_URI = 'mysql://myapp@localhost/myapp'
 #SQLALCHEMY_DATABASE_URI = 'postgresql://root:password@localhost/myapp'
 
@@ -76,7 +78,7 @@ AUTH_TYPE = AUTH_DB
 BABEL_DEFAULT_LOCALE = 'en'
 # Your application default translation path
 BABEL_DEFAULT_FOLDER = 'translations'
-# The allowed translation for you union_master
+# The allowed translation for you union
 LANGUAGES = {
     'en': {'flag':'gb', 'name':'English'},
     'pt': {'flag':'pt', 'name':'Portuguese'},
@@ -91,10 +93,10 @@ LANGUAGES = {
 # Image and file configuration
 #---------------------------------------------------
 # The file upload folder, when using models with files
-UPLOAD_FOLDER = basedir + '/union_master/static/uploads/'
+UPLOAD_FOLDER = BASE_DIR + '/union/static/uploads/'
 
 # The image upload folder, when using models with images
-IMG_UPLOAD_FOLDER = basedir + '/union_master/static/uploads/'
+IMG_UPLOAD_FOLDER = BASE_DIR + '/union/static/uploads/'
 
 # The image upload url, when using models with images
 IMG_UPLOAD_URL = '/static/uploads/'
