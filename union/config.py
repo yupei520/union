@@ -1,12 +1,28 @@
+# -*- coding: utf-8 -*-
+# pylint: disable=C,R,W
+"""The main config file for Union"""
+
+from __future__ import absolute_import
+from __future__ import division
+from __future__ import print_function
+from __future__ import unicode_literals
+
 import os
+import sys
+import imp
 from flask_appbuilder.security.manager import AUTH_OID, AUTH_REMOTE_USER, AUTH_DB, AUTH_LDAP, AUTH_OAUTH
 basedir = os.path.abspath(os.path.dirname(__file__))
+
+if 'UNION_HOME' in os.environ:
+    DATA_DIR = os.environ['UNION_HOME']
+else:
+    DATA_DIR = os.path.join(os.path.expanduser('~'), '.union_master')
 
 # Your App secret key
 SECRET_KEY = '\2\1thisismyscretkey\1\2\e\y\y\h'
 
 # The SQLAlchemy connection string.
-SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'union.db')
+SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'union_master.db')
 #SQLALCHEMY_DATABASE_URI = 'mysql://myapp@localhost/myapp'
 #SQLALCHEMY_DATABASE_URI = 'postgresql://root:password@localhost/myapp'
 
@@ -60,7 +76,7 @@ AUTH_TYPE = AUTH_DB
 BABEL_DEFAULT_LOCALE = 'en'
 # Your application default translation path
 BABEL_DEFAULT_FOLDER = 'translations'
-# The allowed translation for you union
+# The allowed translation for you union_master
 LANGUAGES = {
     'en': {'flag':'gb', 'name':'English'},
     'pt': {'flag':'pt', 'name':'Portuguese'},
@@ -75,15 +91,19 @@ LANGUAGES = {
 # Image and file configuration
 #---------------------------------------------------
 # The file upload folder, when using models with files
-UPLOAD_FOLDER = basedir + '/union/static/uploads/'
+UPLOAD_FOLDER = basedir + '/union_master/static/uploads/'
 
 # The image upload folder, when using models with images
-IMG_UPLOAD_FOLDER = basedir + '/union/static/uploads/'
+IMG_UPLOAD_FOLDER = basedir + '/union_master/static/uploads/'
 
 # The image upload url, when using models with images
 IMG_UPLOAD_URL = '/static/uploads/'
 # Setup image size default is (300, 200, True)
 #IMG_SIZE = (300, 200, True)
+
+
+# SQLALCHEMY_CUSTOM_PASSWORD_STORE =
+
 
 # Theme configuration
 # these are located on static/appbuilder/css/themes
@@ -102,3 +122,27 @@ IMG_UPLOAD_URL = '/static/uploads/'
 #APP_THEME = "united.css"
 #APP_THEME = "yeti.css"
 
+CONFIG_PATH_ENV_VAR = 'SUPERSET_CONFIG_PATH'
+
+
+try:
+    if CONFIG_PATH_ENV_VAR in os.environ:
+        # Explicitly import config module that is not in pythonpath; useful
+        # for case where app is being executed via pex.
+        print('Loaded your LOCAL configuration at [{}]'.format(
+            os.environ[CONFIG_PATH_ENV_VAR]))
+        module = sys.modules[__name__]
+        override_conf = imp.load_source(
+            'union_config',
+            os.environ[CONFIG_PATH_ENV_VAR])
+        for key in dir(override_conf):
+            if key.isupper():
+                setattr(module, key, getattr(override_conf, key))
+
+    else:
+        from union_config import *  # noqa
+        import union_config
+        print('Loaded your LOCAL configuration at [{}]'.format(
+            union_config.__file__))
+except ImportError:
+    pass

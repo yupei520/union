@@ -1,7 +1,21 @@
+# -*- coding: utf-8 -*-
+# pylint: disable=C,R,W
+"""Package's main module!"""
+from __future__ import absolute_import
+from __future__ import division
+from __future__ import print_function
+from __future__ import unicode_literals
+
 import logging
+import json
+import os
+
 from flask import Flask
 from flask_appbuilder import SQLA, AppBuilder
+
 from union import config
+from union.security import UnionSecurityManager
+
 
 """
  Logging configuration
@@ -10,10 +24,16 @@ from union import config
 logging.basicConfig(format='%(asctime)s:%(levelname)s:%(name)s:%(message)s')
 logging.getLogger().setLevel(logging.DEBUG)
 
+APP_DIR = os.path.dirname(__file__)
+CONFIG_MODULE = os.environ.get('UNION_CONFIG', 'union_master.config')
+
+if not os.path.exists(config.DATA_DIR):
+    os.makedirs(config.DATA_DIR)
+
+
 app = Flask(__name__)
-app.config.from_object(config)
-db = SQLA(app)
-appbuilder = AppBuilder(app, db.session)
+app.config.from_object(CONFIG_MODULE)
+conf = app.config
 
 
 """
@@ -27,7 +47,20 @@ def set_sqlite_pragma(dbapi_connection, connection_record):
     cursor = dbapi_connection.cursor()
     cursor.execute("PRAGMA foreign_keys=ON")
     cursor.close()
-"""    
+"""
+
+db = SQLA(app)
+
+
+custom_sm = app.config.get('CUSTOM_SECURITY_MANAGER') or UnionSecurityManager
+
+appbuilder = AppBuilder(
+    app,
+    db.session,
+    security_manager_class=custom_sm,
+)
+
+security_manager = appbuilder.sm
 
 from union import views
 
