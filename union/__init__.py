@@ -13,7 +13,7 @@ import os
 from flask import Flask
 from flask_appbuilder import SQLA, AppBuilder
 
-from union import config
+from union import config, utils
 from union.security import UnionSecurityManager
 
 
@@ -51,6 +51,7 @@ def set_sqlite_pragma(dbapi_connection, connection_record):
 
 db = SQLA(app)
 
+tables_cache = utils.setup_cache(app, conf.get('TABLE_NAMES_CACHE_CONFIG'))
 
 custom_sm = app.config.get('CUSTOM_SECURITY_MANAGER') or UnionSecurityManager
 

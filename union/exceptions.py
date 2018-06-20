@@ -9,3 +9,21 @@ from __future__ import unicode_literals
 class UnionException(Exception):
     status = 500
 
+class UnionTimeoutException(UnionException):
+    pass
+
+
+class UnionSecurityException(UnionException):
+    pass
+
+
+class MetricPermException(UnionException):
+    pass
+
+
+class NoDataException(UnionException):
+    status = 400
+
+
+class UnionTemplateException(UnionException):
+    pass
