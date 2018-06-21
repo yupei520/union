@@ -140,3 +140,93 @@ class Database(Model, AuditMixinNullable):
     @classmethod
     def get_db_engine_spec_for_backend(cls, backend):
         return db_engine_specs.engines.get(backend, db_engine_specs.BaseEngineSpec)
+
+
+class PartitionKey(Model, AuditMixinNullable):
+    """ partition key table"""
+
+    __tablename__ = 'partition_keys'
+    id = Column(Integer, primary_key=True)
+    partition_field = Column(String(32), unique=True)
+
+    def __repr__(self):
+        return self.partition_field
+
+
+class PartitionValue(Model, AuditMixinNullable):
+    """ partition value table"""
+
+    __tablename__ = 'partition_values'
+    id = Column(Integer, primary_key=True)
+    name = Column(String(32), unique=True)
+    format_date = Column(String(32))
+    forward_days = Column(Integer)
+    slice_format = Column(String(16))
+
+    def __repr__(self):
+        return self.name
+
+
+class CommonFetchConfig(Model, AuditMixinNullable):
+    """CommonFetchConfig table"""
+
+    __tablename__ = 'common_fetch_configs'
+    id = Column(Integer, primary_key=True)
+    name = Column(String(32), unique=True)
+    fields_terminated_by = Column(String(16))
+    null_string = Column(String(16))
+    hive_delims_replacement = Column(String(16))
+    null_non_string = Column(String(16))
+
+    def __repr__(self):
+        return self.name
+
+
+class FileDir(Model, AuditMixinNullable):
+    """fileDir tabel"""
+    __tablename__ = 'file_dirs'
+    id = Column(Integer, primary_key=True)
+    dir_name = Column(String(64), unique=True)
+
+    def __repr__(self):
+        return self.dir_name
+
+
+class Fetch(Model, AuditMixinNullable):
+    """Fetch table"""
+    __tablename__ = 'fetchs'
+    id = Column(Integer, primary_key=True)
+    table_name = Column(String(128))
+    hive_database = Column(String(64))
+    hive_table = Column(String(128))
+    query = Column(Text)
+    split_by = Column(String(64))
+    delete_targer_dir = Column(String(128))
+    target_dir = Column(String(256))
+    hive_overwrite = Column(Boolean, default=True)
+    direct = Column(Boolean, default=False)
+    m = Column(Integer)
+    outdir = Column(String(256))
+
+    database_id = Column(Integer, ForeignKey('dbs.id'))
+    database = relationship('Database')
+
+    file_dir_id = Column(Integer, ForeignKey('file_dirs.id'))
+    file_dir = relationship('FileDir')
+
+    partition_key_id = Column(Integer, ForeignKey('partition_keys.id'))
+    partition_key = relationship('PartitionKey')
+
+    partition_value_id = Column(Integer, ForeignKey('partition_values.id'))
+    partition_value = relationship('PartitionValue')
+
+    common_fetch_config_id = Column(Integer, ForeignKey('common_fetch_configs.id'))
+    common_fetch_config = relationship('CommonFetchConfig')
+
+    def __repr__(self):
+        return self.hive_database + '.' + self.hive_table
+
+    @property
+    def name(self):
+        return self.hive_database + '.' + self.hive_table
+

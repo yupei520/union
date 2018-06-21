@@ -28,8 +28,10 @@ config = app.config
 def json_success(json_msg, status=200):
     return Response(json_msg, status=status, mimetype='application/json')
 
+
 class DatabaseView(UnionModelView):
     datamodel = SQLAInterface(models.Database)
+
     list_title = ('List Databases')
     show_title = ('Show Database')
     add_title = ('Add Database')
@@ -62,6 +64,79 @@ class DatabaseView(UnionModelView):
 appbuilder.add_view(DatabaseView, 'Databases', label=('Databases'),
                     icon='fa-database', category='Sources', category_label=('Sources'),
                     category_icon='fa-database')
+
+
+class FetchView(UnionModelView):
+    datamodel = SQLAInterface(models.Fetch)
+
+    list_title = ('List Fetchs')
+    show_title = ('Show Fetch')
+    add_title = ('Add Fetch')
+    edit_title = ('Edit Fetch')
+
+    list_columns = ['name', 'database', 'table_name']
+    add_columns = ['database', 'table_name', 'hive_database', 'hive_table', 'query', 'split_by', 'm', 'target_dir',
+                   'file_dir', 'partition_key', 'partition_value', 'common_fetch_config', 'hive_overwrite', 'direct',
+                   'delete_targer_dir', 'outdir']
+    edit_columns = add_columns
+    show_columns = add_columns
+
+appbuilder.add_view(FetchView, 'Fetchs', label=('Fetchs'),
+                    category='Sources', category_label=('Sources'), category_icon='fa-database')
+
+
+class PartitionKeyView(UnionModelView):
+    datamodel = SQLAInterface(models.PartitionKey)
+
+    list_title = ('List PartitionKey')
+    show_title = ('Show PartitionKey')
+    add_title = ('Add PartitionKey')
+    edit_title = ('Edit PartitionKey')
+
+    list_columns = ['partition_field']
+    show_columns = list_columns
+    edit_columns = list_columns
+    add_columns = list_columns
+
+
+appbuilder.add_view(PartitionKeyView, 'PartitionKeys', label=('PartitionKeys'),
+                    category='Sources', category_label=('Sources'), category_icon='fa-database')
+
+
+class CommonFetchConfigView(UnionModelView):
+    datamodel = SQLAInterface(models.CommonFetchConfig)
+
+    list_title = ('List CommonFetchConfig')
+    show_title = ('Show CommonFetchConfig')
+    add_title = ('Add CommonFetchConfig')
+    edit_columns = ('Edit CommonFetchConfig')
+
+    list_columns = ['name', 'fields_terminated_by', 'null_string', 'hive_delims_replacement', 'null_non_string']
+    show_columns = list_columns
+    edit_columns = list_columns
+    add_columns = list_columns
+
+
+appbuilder.add_view(CommonFetchConfigView, 'CommonFetchConfigViews', label=('CommonFetchConfigViews'),
+                    category='Sources', category_label=('Sources'), category_icon='fa-database')
+
+
+class FileDirView(UnionModelView):
+    datamodel = SQLAInterface(models.FileDir)
+
+    list_title = ('List FileDir')
+    show_title = ('Show FileDir')
+    add_title = ('Add FileDir')
+    edit_title = ('Edit FileDir')
+
+    list_columns = ['dir_name']
+    show_columns = list_columns
+    edit_columns = list_columns
+    add_columns = list_columns
+
+
+appbuilder.add_view(FileDirView, 'FileDirViews', label=('FileDirViews'),
+                    category='Sources', category_label=('Sources'), category_icon='fa-database')
 
 
 class Union(BaseUnionView):
@@ -118,5 +193,6 @@ class Union(BaseUnionView):
                 'Connection failed!\n\n'
                 'The error message returned was:\n{}').format(e)
             )
+
 
 appbuilder.add_view_no_menu(Union)
