@@ -124,6 +124,8 @@ IMG_UPLOAD_URL = '/static/uploads/'
 #APP_THEME = "united.css"
 #APP_THEME = "yeti.css"
 
+CREATE_JOB_DIR = '/Users/user/Desktop/'
+
 CONFIG_PATH_ENV_VAR = 'SUPERSET_CONFIG_PATH'
 
 

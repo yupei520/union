@@ -5,9 +5,10 @@ from __future__ import division
 from __future__ import print_function
 from __future__ import unicode_literals
 
-
+import os
 import logging
 import json
+import shutil
 
 from flask import (flash, g, Markup, request, Response)
 from flask_appbuilder import expose
@@ -28,6 +29,22 @@ config = app.config
 def json_success(json_msg, status=200):
     return Response(json_msg, status=status, mimetype='application/json')
 
+def join_file(dir, file_name, suffix):
+    return os.path.join(dir, file_name+suffix)
+
+def create_fetch_file(obj):
+    file_name = obj.hive_table
+    dir_path = os.path.join(config.get('CREATE_JOB_DIR'), obj.file_dir.dir_name, obj.hive_database, file_name)
+    if os.path.exists(dir_path) == False:
+        os.makedirs(dir_path)
+    with open(join_file(dir_path, file_name, '.py'), 'w') as py_file:
+        py_content = """if __name__ == '__main__':
+    pass"""
+        py_file.write(py_content)
+
+def delete_fetch_file(obj):
+    dir_path = os.path.join(config.CREATE_JOB_DIR, obj.file_dir.dir_name, obj.hive_database, obj.hive_table)
+    shutil.rmtree(dir_path)
 
 class DatabaseView(UnionModelView):
     datamodel = SQLAInterface(models.Database)
@@ -76,14 +93,37 @@ class FetchView(UnionModelView):
 
     list_columns = ['name', 'database', 'table_name']
     add_columns = ['database', 'table_name', 'hive_database', 'hive_table', 'query', 'split_by', 'm', 'target_dir',
-                   'file_dir', 'partition_key', 'partition_value', 'common_fetch_config', 'hive_overwrite', 'direct',
+                   'file_dir', 'partition_key', 'common_fetch_config', 'hive_overwrite', 'direct',
                    'delete_targer_dir', 'outdir']
     edit_columns = add_columns
-    show_columns = add_columns
+    show_columns = ['name', 'database', 'table_name', 'generate_run_script']
+
+    def pre_add(self, obj):
+        create_fetch_file(obj)
+
+    def pre_delete(self, obj):
+        # delete_fetch_file(obj)
+        pass
 
 appbuilder.add_view(FetchView, 'Fetchs', label=('Fetchs'),
                     category='Sources', category_label=('Sources'), category_icon='fa-database')
 
+
+class PartitionValueView(UnionModelView):
+    datamodel = SQLAInterface(models.PartitionValue)
+
+    list_title = ('List PartitionValues')
+    show_title = ('Show PartitionValue')
+    add_title = ('Add PartitionValue')
+    edit_title = ('Edit PartitionValue')
+
+    list_columns = ['name', 'format_date', 'forward_days', 'slice_format']
+    show_columns = list_columns + ['real_value']
+    edit_columns = list_columns
+    add_columns = list_columns
+
+appbuilder.add_view(PartitionValueView, 'PartitionValue', label=('PartitionValue'),
+                    category='Sources', category_label=('Sources'), category_icon='fa-database')
 
 class PartitionKeyView(UnionModelView):
     datamodel = SQLAInterface(models.PartitionKey)
@@ -93,7 +133,7 @@ class PartitionKeyView(UnionModelView):
     add_title = ('Add PartitionKey')
     edit_title = ('Edit PartitionKey')
 
-    list_columns = ['partition_field']
+    list_columns = ['partition_field', 'partition_value']
     show_columns = list_columns
     edit_columns = list_columns
     add_columns = list_columns

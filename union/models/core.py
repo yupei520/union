@@ -6,6 +6,7 @@ from __future__ import print_function
 from __future__ import unicode_literals
 
 import logging
+import datetime
 
 from copy import copy, deepcopy
 import sqlalchemy as sqla
@@ -94,6 +95,7 @@ class Database(Model, AuditMixinNullable):
             conn.password = self.password
         return str(conn)
 
+
     @utils.memoized(
         watch=('impersonate_user', 'sqlalchemy_uri_decrypted', 'extra'))
     def get_sqla_engine(self, schema=None, nullpool=True, user_name=None):
@@ -149,6 +151,9 @@ class PartitionKey(Model, AuditMixinNullable):
     id = Column(Integer, primary_key=True)
     partition_field = Column(String(32), unique=True)
 
+    partition_value_id = Column(Integer, ForeignKey('partition_values.id'))
+    partition_value = relationship('PartitionValue')
+
     def __repr__(self):
         return self.partition_field
 
@@ -165,6 +170,16 @@ class PartitionValue(Model, AuditMixinNullable):
 
     def __repr__(self):
         return self.name
+
+    @property
+    def real_value(self):
+        real_value = datetime.date.today()
+        if self.forward_days:
+            real_value = real_value -datetime.timedelta(days=self.forward_days)
+        real_value = real_value.strftime(self.format_date)
+        if self.slice_format:
+            real_value = real_value[self.slice_format]
+        return real_value
 
 
 class CommonFetchConfig(Model, AuditMixinNullable):
@@ -217,9 +232,6 @@ class Fetch(Model, AuditMixinNullable):
     partition_key_id = Column(Integer, ForeignKey('partition_keys.id'))
     partition_key = relationship('PartitionKey')
 
-    partition_value_id = Column(Integer, ForeignKey('partition_values.id'))
-    partition_value = relationship('PartitionValue')
-
     common_fetch_config_id = Column(Integer, ForeignKey('common_fetch_configs.id'))
     common_fetch_config = relationship('CommonFetchConfig')
 
@@ -229,4 +241,50 @@ class Fetch(Model, AuditMixinNullable):
     @property
     def name(self):
         return self.hive_database + '.' + self.hive_table
+
+    @property
+    def generate_run_script(self):
+        param_list = []
+        sqlalchemy_uri_decrypted = make_url(self.database.sqlalchemy_uri)
+        script_str = ('sqoop import --connect jdbc:{database_type}://{host}:{port}/{database_name} '
+                      '--username {username} --password {password} '.format(
+            database_type=self.database.backend, host=sqlalchemy_uri_decrypted.host,
+            port=sqlalchemy_uri_decrypted.port, database_name=sqlalchemy_uri_decrypted.database,
+            username=sqlalchemy_uri_decrypted.username,
+            password=sqlalchemy_uri_decrypted.password))
+        param_list.append(script_str)
+        if self.query:
+            param_list.append('--query "{sql}"'.format(sql=self.query))
+        if self.split_by:
+            param_list.append('--split-by "{split_by}"'.format(split_by=self.split_by))
+        param_list.append('--delete-target-dir ')
+        if self.target_dir:
+            param_list.append('--target-dir {target_dir}'.format(target_dir=self.target_dir))
+        if self.hive_overwrite:
+            param_list.append('--hive-import  --hive-overwrite ')
+        else:
+            param_list.append('--hive-import ')
+        if self.hive_table and self.hive_database:
+            param_list.append('--hive-table {hive_database}.{hive_table}'
+                              .format(hive_database=self.hive_database, hive_table=self.hive_table))
+        fileds_by = self.common_fetch_config.fields_terminated_by
+        if fileds_by:
+            param_list.append("--fields-terminated-by '{fileds_by}'".format(fileds_by=fileds_by))
+        null_string = self.common_fetch_config.null_string
+        if null_string:
+            param_list.append("--null-string '{null_string}'".format(null_string=null_string))
+        hive_delims = self.common_fetch_config.hive_delims_replacement
+        if hive_delims:
+            param_list.append("--hive-delims-replacement '{hive_delims}'".format(hive_delims=hive_delims))
+        hive_par_key = self.partition_key.partition_field
+        hive_par_value = self.partition_key.partition_value.real_value
+        if hive_par_key and hive_par_value:
+            param_list.append('--hive-partition-key {hive_par_key} --hive-partition-value {hive_par_value}'
+                              .format(hive_par_key=hive_par_key, hive_par_value=hive_par_value))
+        if self.m:
+            param_list.append('-m {m}'.format(m=self.m))
+        if self.outdir:
+            param_list.append('--outdir {outdir}'.format(outdir=self.outdir))
+        script_str = '\\\n'.join(param_list)
+        return script_str
 
