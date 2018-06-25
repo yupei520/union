@@ -36,18 +36,32 @@ app.config.from_object(CONFIG_MODULE)
 conf = app.config
 
 
-"""
-from sqlalchemy.engine import Engine
-from sqlalchemy import event
+MANIFEST_FILE = APP_DIR + '/static/assets/dist/manifest.json'
+manifest = {}
 
-#Only include this for SQLLite constraints
-@event.listens_for(Engine, "connect")
-def set_sqlite_pragma(dbapi_connection, connection_record):
-    # Will force sqllite contraint foreign keys
-    cursor = dbapi_connection.cursor()
-    cursor.execute("PRAGMA foreign_keys=ON")
-    cursor.close()
-"""
+
+def parse_manifest_json():
+    global manifest
+    try:
+        with open(MANIFEST_FILE, 'r') as f:
+            manifest = json.load(f)
+    except Exception:
+        pass
+
+
+def get_manifest_file(filename):
+    if app.debug:
+        parse_manifest_json()
+    return '/static/assets/dist/' + manifest.get(filename, '')
+
+
+parse_manifest_json()
+
+
+@app.context_processor
+def get_js_manifest():
+    return dict(js_manifest=get_manifest_file)
+
 
 db = SQLA(app)
 
@@ -58,6 +72,7 @@ custom_sm = app.config.get('CUSTOM_SECURITY_MANAGER') or UnionSecurityManager
 appbuilder = AppBuilder(
     app,
     db.session,
+    base_template='union/base.html',
     security_manager_class=custom_sm,
 )
 

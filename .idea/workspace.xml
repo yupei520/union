@@ -2,12 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="699ff14b-f870-49e6-b129-b9c8f455ac56" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/union/test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/union/static/assets/.babelrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/union/static/assets/.eslintignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/union/static/assets/.eslintrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/union/static/assets/src/common.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/union/static/assets/src/i18n.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/union/static/assets/src/locales.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/union/static/assets/src/modules/dates.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/union/static/assets/src/modules/utils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/union/static/assets/src/theme.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/union/static/assets/stylesheets/less/cosmo/bootswatch.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/union/static/assets/stylesheets/less/cosmo/cosmoTheme.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/union/static/assets/stylesheets/less/cosmo/variables.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/union/static/assets/stylesheets/less/index.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/union/static/assets/stylesheets/react-select/select.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/union/static/assets/stylesheets/union.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/union/templates/appbuilder/general/widgets/search.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/union/templates/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/union/templates/union/base.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/union/templates/union/basic.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/union/templates/union/theme.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/union/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/union/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/union/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/union/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/union/manager_db.py" beforeDir="false" afterPath="$PROJECT_DIR$/union/manager_db.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/union/models/core.py" beforeDir="false" afterPath="$PROJECT_DIR$/union/models/core.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/union/views/core.py" beforeDir="false" afterPath="$PROJECT_DIR$/union/views/core.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/union/static/assets/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/union/static/assets/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/union/static/assets/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/union/static/assets/webpack.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/union/templates/union/fab_overrides/list_with_checkboxes.html" beforeDir="false" afterPath="$PROJECT_DIR$/union/templates/union/fab_overrides/list_with_checkboxes.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,44 +40,127 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/union$manager_db.coverage" NAME="manager_db Coverage Results" MODIFIED="1529417042699" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/union" />
-    <SUITE FILE_PATH="coverage/union_master$run.coverage" NAME="run Coverage Results" MODIFIED="1529660905295" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/union" />
+    <SUITE FILE_PATH="coverage/union_master$run.coverage" NAME="run Coverage Results" MODIFIED="1529920646845" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/union" />
     <SUITE FILE_PATH="coverage/union_master$manager_db.coverage" NAME="manager_db Coverage Results" MODIFIED="1529633979509" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/union" />
     <SUITE FILE_PATH="coverage/union$run.coverage" NAME="run Coverage Results" MODIFIED="1529418500815" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/union" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="core.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/union/models/core.py">
+      <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/union/templates/union/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="313">
-              <caret line="31" column="19" lean-forward="true" selection-start-line="31" selection-start-column="19" selection-end-line="31" selection-end-column="19" />
+            <state relative-caret-position="180">
+              <caret line="12" column="16" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="theme.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/union/templates/union/theme.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="358">
+              <caret line="1327" column="14" selection-start-line="1327" selection-start-column="14" selection-end-line="1327" selection-end-column="14" />
               <folding>
-                <element signature="e#78#116#0" expanded="true" />
+                <element signature="e#7413#7441#0#HTML" expanded="true" />
+                <element signature="e#7495#7513#0#HTML" expanded="true" />
+                <element signature="e#12167#12195#0#HTML" expanded="true" />
+                <element signature="e#12520#12548#0#HTML" expanded="true" />
+                <element signature="e#35922#35929#1#HTML" expanded="true" />
+                <element signature="e#36201#36208#1#HTML" expanded="true" />
+                <element signature="e#36340#36347#1#HTML" expanded="true" />
+                <element signature="e#36533#36540#1#HTML" expanded="true" />
+                <element signature="e#36672#36679#1#HTML" expanded="true" />
+                <element signature="e#36951#36958#1#HTML" expanded="true" />
+                <element signature="e#37375#37381#0#HTML" expanded="true" />
+                <element signature="e#37448#37454#0#HTML" expanded="true" />
+                <element signature="e#38752#38759#1#HTML" expanded="true" />
+                <element signature="e#39337#39344#1#HTML" expanded="true" />
+                <element signature="e#39748#39755#1#HTML" expanded="true" />
+                <element signature="e#40161#40168#1#HTML" expanded="true" />
+                <element signature="e#40516#40544#0#HTML" expanded="true" />
+                <element signature="e#41887#41906#0#HTML" expanded="true" />
+                <element signature="e#42163#42181#0#HTML" expanded="true" />
+                <element signature="e#42311#42329#0#HTML" expanded="true" />
+                <element signature="e#42459#42477#0#HTML" expanded="true" />
+                <element signature="e#42606#42624#0#HTML" expanded="true" />
+                <element signature="e#42877#42895#0#HTML" expanded="true" />
+                <element signature="e#43042#43060#0#HTML" expanded="true" />
+                <element signature="e#43207#43225#0#HTML" expanded="true" />
+                <element signature="e#43371#43389#0#HTML" expanded="true" />
+                <element signature="e#43633#43651#0#HTML" expanded="true" />
+                <element signature="e#43890#43908#0#HTML" expanded="true" />
+                <element signature="e#43979#43997#0#HTML" expanded="true" />
+                <element signature="e#44067#44085#0#HTML" expanded="true" />
+                <element signature="e#52922#52929#1#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="config.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/union/config.py">
+      <file leaf-file-name="baselayout.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/union/templates/appbuilder/baselayout.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2115">
-              <caret line="141" column="38" lean-forward="true" selection-start-line="141" selection-start-column="38" selection-end-line="141" selection-end-column="38" />
+            <state relative-caret-position="45">
+              <caret line="3" column="16" lean-forward="true" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="search.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/union/templates/appbuilder/general/widgets/search.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="24" column="14" lean-forward="true" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
               <folding>
-                <element signature="e#86#124#0" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#form#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="e#932#938#0#HTML" expanded="true" />
+                <element signature="e#938#944#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="cache_util.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/union/cache_util.py">
+      <file leaf-file-name="navbar.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/union/templates/appbuilder/navbar.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="28">
-              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-              <folding>
-                <element signature="e#48#86#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="-115">
+              <caret line="14" column="53" selection-start-line="14" selection-start-column="53" selection-end-line="14" selection-end-column="53" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="base_list.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/union/templates/appbuilder/general/widgets/base_list.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="690">
+              <caret line="46" column="11" selection-start-line="46" selection-start-column="11" selection-end-line="46" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="list.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/union/templates/appbuilder/general/model/list.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="11" column="22" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="navbar_right.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/union/templates/appbuilder/navbar_right.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="160">
+              <caret line="25" selection-start-line="25" selection-end-line="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/union/templates/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="298">
+              <caret line="112" column="28" selection-start-line="112" selection-start-column="28" selection-end-line="112" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -63,53 +168,11 @@
       <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/union/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="546">
-              <caret line="44" column="59" lean-forward="true" selection-start-line="44" selection-start-column="59" selection-end-line="44" selection-end-column="59" />
+            <state relative-caret-position="348">
+              <caret line="76" column="1" selection-start-line="76" selection-start-column="1" selection-end-line="76" selection-end-column="1" />
               <folding>
                 <element signature="e#77#115#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="utils.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/union/utils.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1155">
-              <caret line="17" column="31" lean-forward="true" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
-              <folding>
-                <element signature="e#93#131#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="manager_db.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/union/manager_db.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="15" lean-forward="true" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="core.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/union/views/core.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2742">
-              <caret line="31" column="38" lean-forward="true" selection-start-line="31" selection-start-column="38" selection-end-line="31" selection-end-column="38" />
-              <folding>
-                <element signature="e#48#86#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/union/test.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" selection-start-line="2" selection-end-line="3" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -119,8 +182,11 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="CSS File" />
+        <option value="Less File" />
+        <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -131,6 +197,7 @@
       <find>superset</find>
       <find>Superset</find>
       <find>cache_util</find>
+      <find>github</find>
     </findStrings>
     <replaceStrings>
       <replace>BASE_DIR</replace>
@@ -148,7 +215,6 @@
         <option value="$PROJECT_DIR$/union/views/__init__.py" />
         <option value="$PROJECT_DIR$/union/translations/babel.cfg" />
         <option value="$PROJECT_DIR$/union/templates/appbuilder/general/widgets/base_list.html" />
-        <option value="$PROJECT_DIR$/union/templates/union/fab_overrides/list_with_checkboxes.html" />
         <option value="$PROJECT_DIR$/union/templates/union/flash_wrapper.html" />
         <option value="$PROJECT_DIR$/union/templates/appbuilder/baselayout.html" />
         <option value="$PROJECT_DIR$/union/templates/appbuilder/navbar_right.html" />
@@ -158,34 +224,69 @@
         <option value="$PROJECT_DIR$/union/exceptions.py" />
         <option value="$PROJECT_DIR$/union/db_engine_specs.py" />
         <option value="$PROJECT_DIR$/union/cache_util.py" />
-        <option value="$PROJECT_DIR$/union/__init__.py" />
         <option value="$PROJECT_DIR$/union/utils.py" />
         <option value="$PROJECT_DIR$/union/templates/union/models/database/macros.html" />
         <option value="$PROJECT_DIR$/union/views/base.py" />
         <option value="$PROJECT_DIR$/union/manager_db.py" />
-        <option value="$PROJECT_DIR$/union/config.py" />
         <option value="$PROJECT_DIR$/union/test.py" />
         <option value="$PROJECT_DIR$/union/models/core.py" />
         <option value="$PROJECT_DIR$/union/views/core.py" />
+        <option value="$PROJECT_DIR$/union/templates/union/fab_overrides/list_with_checkboxes.html" />
+        <option value="$PROJECT_DIR$/union/static/assets/stylesheets/union.css" />
+        <option value="$PROJECT_DIR$/union/static/assets/stylesheets/union.less" />
+        <option value="$PROJECT_DIR$/union/static/assets/stylesheets/less/index.less" />
+        <option value="$PROJECT_DIR$/union/static/assets/stylesheets/less/cosmo/variables.less" />
+        <option value="$PROJECT_DIR$/union/static/assets/stylesheets/less/cosmo/cosmoTheme.js" />
+        <option value="$PROJECT_DIR$/union/static/assets/stylesheets/less/cosmo/bootswatch.less" />
+        <option value="$PROJECT_DIR$/union/static/assets/src/theme.js" />
+        <option value="$PROJECT_DIR$/union/static/assets/stylesheets/react-select/select.less" />
+        <option value="$PROJECT_DIR$/union/static/assets/src/common.js" />
+        <option value="$PROJECT_DIR$/union/static/assets/src/locales.jsx.js" />
+        <option value="$PROJECT_DIR$/union/static/assets/src/i18n.jsx.js" />
+        <option value="$PROJECT_DIR$/union/static/assets/.babelrc" />
+        <option value="$PROJECT_DIR$/union/static/assets/.eslintrc" />
+        <option value="$PROJECT_DIR$/union/static/assets/.eslintignore" />
+        <option value="$PROJECT_DIR$/union/config.py" />
+        <option value="$PROJECT_DIR$/union/static/assets/node_modules/mini-css-extract-plugin/dist/index.js" />
+        <option value="$PROJECT_DIR$/union/static/assets/src/i18n.jsx" />
+        <option value="$PROJECT_DIR$/union/static/assets/src/modules/utils.js" />
+        <option value="$PROJECT_DIR$/union/static/assets/src/modules/dates.js" />
+        <option value="$PROJECT_DIR$/union/static/assets/package.json" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/union/static/assets/webpack.config.js" />
+        <option value="$PROJECT_DIR$/union/templates/union/base.html" />
+        <option value="$PROJECT_DIR$/union/templates/union/basic.html" />
+        <option value="$PROJECT_DIR$/union/templates/union/theme.html" />
+        <option value="$PROJECT_DIR$/union/templates/index.html" />
+        <option value="$PROJECT_DIR$/union/__init__.py" />
+        <option value="$PROJECT_DIR$/union/templates/appbuilder/general/widgets/search.html" />
       </list>
     </option>
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/union/static/assets/node_modules" />
   </component>
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths>
       <path value="$PROJECT_DIR$/union/static/assets/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="442" />
-    <option name="y" value="28" />
-    <option name="width" value="1543" />
-    <option name="height" value="798" />
+  <component name="ProjectFrameBounds" extendedState="1">
+    <option name="y" value="23" />
+    <option name="width" value="1440" />
+    <option name="height" value="832" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -200,6 +301,39 @@
               <item name="union_master" type="b2602c69:ProjectViewProjectNode" />
               <item name="union_master" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="union_master" type="b2602c69:ProjectViewProjectNode" />
+              <item name="union_master" type="462c0819:PsiDirectoryNode" />
+              <item name="union" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="union_master" type="b2602c69:ProjectViewProjectNode" />
+              <item name="union_master" type="462c0819:PsiDirectoryNode" />
+              <item name="union" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="union_master" type="b2602c69:ProjectViewProjectNode" />
+              <item name="union_master" type="462c0819:PsiDirectoryNode" />
+              <item name="union" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="appbuilder" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="union_master" type="b2602c69:ProjectViewProjectNode" />
+              <item name="union_master" type="462c0819:PsiDirectoryNode" />
+              <item name="union" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="appbuilder" type="462c0819:PsiDirectoryNode" />
+              <item name="general" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="union_master" type="b2602c69:ProjectViewProjectNode" />
+              <item name="union_master" type="462c0819:PsiDirectoryNode" />
+              <item name="union" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="union" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -208,9 +342,12 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="list.type.of.created.stylesheet" value="Less" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -352,30 +489,31 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-6" y="23" width="1543" height="798" extended-state="1" />
+    <frame x="0" y="23" width="1440" height="832" extended-state="1" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" weight="0.32952926" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.30813125" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.3281027" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22584943" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.307483" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.31428573" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.42274678" />
+      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3281027" />
-      <window_info anchor="right" id="SciView" />
+      <window_info anchor="right" id="SciView" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" id="Data View" order="3" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3281027" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -386,141 +524,14 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/union/__init__.py</url>
-          <line>3</line>
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="1" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/union/models/core.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="825">
-          <caret line="55" lean-forward="true" selection-start-line="55" selection-end-line="55" />
-          <folding>
-            <element signature="e#78#116#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/union/templates/union/fab_overrides/list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="14" lean-forward="true" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/union/views/core.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="38" column="5" lean-forward="true" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
-          <folding>
-            <element signature="e#48#86#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/union/templates/union/fab_overrides/list_with_checkboxes.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="15" lean-forward="true" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/union/models/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/union/models/helpers.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/union/run.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/union/views.py" />
-    <entry file="file://$PROJECT_DIR$/union/translations/babel.cfg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/union/translations/messages.pot">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/union/views/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="20" lean-forward="true" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/union/templates/appbuilder/general/model/list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="22" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/union/security.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#120#158#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/union/translations/utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-174" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/union/templates/union/fab_overrides/list_with_checkboxes.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="415">
-          <caret line="45" column="44" lean-forward="true" selection-start-line="45" selection-start-column="44" selection-end-line="45" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/union/templates/union/flash_wrapper.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="6" lean-forward="true" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/union/templates/appbuilder/baselayout.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="20" column="29" lean-forward="true" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/union/templates/appbuilder/navbar.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
-          <caret line="46" column="10" lean-forward="true" selection-start-line="46" selection-start-column="10" selection-end-line="46" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/union/templates/appbuilder/navbar_right.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
-          <folding>
-            <element signature="e#315#321#1#HTML" expanded="true" />
-            <element signature="e#1134#1140#1#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/union/templates/appbuilder/general/widgets/base_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="46" column="11" selection-start-line="46" selection-start-column="11" selection-end-line="46" selection-end-column="11" />
         </state>
       </provider>
     </entry>
@@ -559,9 +570,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" selection-start-line="10" selection-end-line="10" />
-          <folding>
-            <element signature="e#48#86#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -589,23 +597,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/union/cache_util.py">
+    <entry file="file://$PROJECT_DIR$/union/models/core.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="28">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-          <folding>
-            <element signature="e#48#86#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="313">
+          <caret line="31" column="19" lean-forward="true" selection-start-line="31" selection-start-column="19" selection-end-line="31" selection-end-column="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/union/__init__.py">
+    <entry file="file://$PROJECT_DIR$/union/cache_util.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="44" column="59" lean-forward="true" selection-start-line="44" selection-start-column="59" selection-end-line="44" selection-end-column="59" />
-          <folding>
-            <element signature="e#77#115#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="150">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
         </state>
       </provider>
     </entry>
@@ -619,26 +621,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/union/config.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2115">
-          <caret line="141" column="38" lean-forward="true" selection-start-line="141" selection-start-column="38" selection-end-line="141" selection-end-column="38" />
-          <folding>
-            <element signature="e#86#124#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/union/models/core.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="31" column="19" lean-forward="true" selection-start-line="31" selection-start-column="19" selection-end-line="31" selection-end-column="19" />
-          <folding>
-            <element signature="e#78#116#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/union/manager_db.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -648,10 +630,303 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/union/views/core.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2742">
+        <state relative-caret-position="-809">
           <caret line="31" column="38" lean-forward="true" selection-start-line="31" selection-start-column="38" selection-end-line="31" selection-end-column="38" />
           <folding>
             <element signature="e#48#86#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/union/templates/union/fab_overrides/list_with_checkboxes.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="89">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/union/static/assets/stylesheets/union.css" />
+    <entry file="file://$PROJECT_DIR$/union/static/assets/stylesheets/less/index.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="33" lean-forward="true" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/union/static/assets/stylesheets/less/cosmo/variables.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="845" column="4" lean-forward="true" selection-start-line="845" selection-start-column="4" selection-end-line="845" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/union/static/assets/stylesheets/less/cosmo/cosmoTheme.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="53" column="18" selection-start-line="53" selection-start-column="18" selection-end-line="53" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/union/static/assets/stylesheets/less/cosmo/bootswatch.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="87" column="19" selection-start-line="87" selection-start-column="19" selection-end-line="87" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/union/static/assets/stylesheets/union.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="8" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/union/static/assets/stylesheets/react-select/select.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="31" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/union/static/assets/.babelrc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="1" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/union/static/assets/yarn-error.log" />
+    <entry file="file://$PROJECT_DIR$/union/static/assets/.eslintrc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="34" column="32" selection-start-line="34" selection-start-column="32" selection-end-line="34" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/union/static/assets/src/i18n.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="155">
+          <caret line="11" column="6" lean-forward="true" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/union/static/assets/src/locales.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1811">
+          <caret line="5" column="45" selection-start-line="5" selection-start-column="45" selection-end-line="5" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/union/static/assets/src/modules/dates.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="146" column="24" lean-forward="true" selection-start-line="146" selection-start-column="24" selection-end-line="146" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/union/static/assets/node_modules/mini-css-extract-plugin/dist/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="311">
+          <caret line="27" column="69" selection-start-line="27" selection-start-column="69" selection-end-line="27" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/union/static/assets/.eslintignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="5" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/union/config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="22" column="56" selection-start-line="22" selection-start-column="56" selection-end-line="22" selection-end-column="56" />
+          <folding>
+            <element signature="e#86#124#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/union/static/assets/src/theme.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/union/static/assets/src/modules/utils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3045">
+          <caret line="203" selection-start-line="203" selection-end-line="203" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#26#46#0" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#td#0;n#tr#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/union/static/assets/src/common.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-143">
+          <caret line="4" column="32" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="32" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#36#59#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/union/static/assets/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2310">
+          <caret line="154" column="41" selection-start-line="154" selection-start-column="41" selection-end-line="154" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="12" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/union/static/assets/webpack.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="39" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/union/templates/union/basic.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-390">
+          <caret line="6" column="21" lean-forward="true" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#1933#1940#1#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/union/templates/union/theme.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="358">
+          <caret line="1327" column="14" selection-start-line="1327" selection-start-column="14" selection-end-line="1327" selection-end-column="14" />
+          <folding>
+            <element signature="e#7413#7441#0#HTML" expanded="true" />
+            <element signature="e#7495#7513#0#HTML" expanded="true" />
+            <element signature="e#12167#12195#0#HTML" expanded="true" />
+            <element signature="e#12520#12548#0#HTML" expanded="true" />
+            <element signature="e#35922#35929#1#HTML" expanded="true" />
+            <element signature="e#36201#36208#1#HTML" expanded="true" />
+            <element signature="e#36340#36347#1#HTML" expanded="true" />
+            <element signature="e#36533#36540#1#HTML" expanded="true" />
+            <element signature="e#36672#36679#1#HTML" expanded="true" />
+            <element signature="e#36951#36958#1#HTML" expanded="true" />
+            <element signature="e#37375#37381#0#HTML" expanded="true" />
+            <element signature="e#37448#37454#0#HTML" expanded="true" />
+            <element signature="e#38752#38759#1#HTML" expanded="true" />
+            <element signature="e#39337#39344#1#HTML" expanded="true" />
+            <element signature="e#39748#39755#1#HTML" expanded="true" />
+            <element signature="e#40161#40168#1#HTML" expanded="true" />
+            <element signature="e#40516#40544#0#HTML" expanded="true" />
+            <element signature="e#41887#41906#0#HTML" expanded="true" />
+            <element signature="e#42163#42181#0#HTML" expanded="true" />
+            <element signature="e#42311#42329#0#HTML" expanded="true" />
+            <element signature="e#42459#42477#0#HTML" expanded="true" />
+            <element signature="e#42606#42624#0#HTML" expanded="true" />
+            <element signature="e#42877#42895#0#HTML" expanded="true" />
+            <element signature="e#43042#43060#0#HTML" expanded="true" />
+            <element signature="e#43207#43225#0#HTML" expanded="true" />
+            <element signature="e#43371#43389#0#HTML" expanded="true" />
+            <element signature="e#43633#43651#0#HTML" expanded="true" />
+            <element signature="e#43890#43908#0#HTML" expanded="true" />
+            <element signature="e#43979#43997#0#HTML" expanded="true" />
+            <element signature="e#44067#44085#0#HTML" expanded="true" />
+            <element signature="e#52922#52929#1#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/union/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="112" column="28" selection-start-line="112" selection-start-column="28" selection-end-line="112" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/union/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="76" column="1" selection-start-line="76" selection-start-column="1" selection-end-line="76" selection-end-column="1" />
+          <folding>
+            <element signature="e#77#115#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/union/templates/union/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="16" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/union/templates/appbuilder/navbar_right.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/union/templates/appbuilder/navbar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-115">
+          <caret line="14" column="53" selection-start-line="14" selection-start-column="53" selection-end-line="14" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/union/templates/appbuilder/general/widgets/base_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="690">
+          <caret line="46" column="11" selection-start-line="46" selection-start-column="11" selection-end-line="46" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/union/templates/appbuilder/general/model/list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="22" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/union/static/assets/dist/theme.127fe945bcceafdeb05a.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3849">
+          <caret line="14050" column="9" selection-start-line="14050" selection-start-column="9" selection-end-line="14050" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/union/templates/appbuilder/baselayout.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="16" lean-forward="true" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/union/templates/appbuilder/general/widgets/search.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="14" lean-forward="true" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#form#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#932#938#0#HTML" expanded="true" />
+            <element signature="e#938#944#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -10,6 +10,7 @@ from __future__ import unicode_literals
 import os
 import sys
 import imp
+import json
 from flask_appbuilder.security.manager import AUTH_OID, AUTH_REMOTE_USER, AUTH_DB, AUTH_LDAP, AUTH_OAUTH
 BASE_DIR = os.path.abspath(os.path.dirname(__file__))
 
@@ -19,6 +20,9 @@ else:
     DATA_DIR = os.path.join(os.path.expanduser('~'), '.union')
 
 PACKAGE_DIR = os.path.join(BASE_DIR, 'static', 'assets')
+PACKAGE_FILE = os.path.join(PACKAGE_DIR, 'package.json')
+with open(PACKAGE_FILE) as package_file:
+    VERSION_STRING = json.load(package_file)['version']
 
 # Your App secret key
 SECRET_KEY = '\2\1thisismyscretkey\1\2\e\y\y\h'
@@ -110,19 +114,7 @@ IMG_UPLOAD_URL = '/static/uploads/'
 # Theme configuration
 # these are located on static/appbuilder/css/themes
 # you can create your own and easily use them placing them on the same dir structure to override
-#APP_THEME = "bootstrap-theme.css"  # default bootstrap
-#APP_THEME = "cerulean.css"
-#APP_THEME = "amelia.css"
-#APP_THEME = "cosmo.css"
-#APP_THEME = "cyborg.css"  
-#APP_THEME = "flatly.css"
-#APP_THEME = "journal.css"
-#APP_THEME = "readable.css"
-#APP_THEME = "simplex.css"
-#APP_THEME = "slate.css"   
-#APP_THEME = "spacelab.css"
-#APP_THEME = "united.css"
-#APP_THEME = "yeti.css"
+
 
 CREATE_JOB_DIR = '/Users/user/Desktop/'
 
