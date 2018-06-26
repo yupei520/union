@@ -16,7 +16,7 @@ from flask_appbuilder.widgets import ListWidget
 from flask_babel import get_locale
 
 from union import conf, utils
-# from union.translation.utils import get_language_pack
+from union.translations.utils import get_language_pack
 
 
 FRONTEND_CONF_KEYS = (
@@ -43,7 +43,7 @@ class BaseUnionView(BaseView):
             'flash_messages': messages,
             'conf': {k: conf.get(k) for k in FRONTEND_CONF_KEYS},
             'locale': locale,
-            'language_pack': 'en',#get_language_pack(locale)
+            'language_pack': get_language_pack(locale),
         }
 
 

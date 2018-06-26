@@ -35,6 +35,7 @@ metadata = Model.metadata  # pylint: disable=no-member
 
 PASSWORD_MASK = 'X' * 10
 
+
 class Database(Model, AuditMixinNullable):
 
     """An ORM object that stores Database related information"""
@@ -94,7 +95,6 @@ class Database(Model, AuditMixinNullable):
         else:
             conn.password = self.password
         return str(conn)
-
 
     @utils.memoized(
         watch=('impersonate_user', 'sqlalchemy_uri_decrypted', 'extra'))
@@ -163,38 +163,38 @@ class PartitionValue(Model, AuditMixinNullable):
 
     __tablename__ = 'partition_values'
     id = Column(Integer, primary_key=True)
-    name = Column(String(32), unique=True)
+    par_val_name = Column(String(32), unique=True)
     format_date = Column(String(32))
     forward_days = Column(Integer)
     slice_format = Column(String(16))
 
     def __repr__(self):
-        return self.name
+        return self.par_val_name
 
     @property
     def real_value(self):
         real_value = datetime.date.today()
         if self.forward_days:
-            real_value = real_value -datetime.timedelta(days=self.forward_days)
+            real_value = real_value - datetime.timedelta(days=self.forward_days)
         real_value = real_value.strftime(self.format_date)
         if self.slice_format:
             real_value = real_value[self.slice_format]
         return real_value
 
 
-class CommonFetchConfig(Model, AuditMixinNullable):
+class DefaultFetchConfig(Model, AuditMixinNullable):
     """CommonFetchConfig table"""
 
-    __tablename__ = 'common_fetch_configs'
+    __tablename__ = 'default_fetch_configs'
     id = Column(Integer, primary_key=True)
-    name = Column(String(32), unique=True)
+    def_fet_name = Column(String(32), unique=True)
     fields_terminated_by = Column(String(16))
     null_string = Column(String(16))
     hive_delims_replacement = Column(String(16))
     null_non_string = Column(String(16))
 
     def __repr__(self):
-        return self.name
+        return self.def_fet_name
 
 
 class FileDir(Model, AuditMixinNullable):
@@ -222,6 +222,7 @@ class Fetch(Model, AuditMixinNullable):
     direct = Column(Boolean, default=False)
     m = Column(Integer)
     outdir = Column(String(256))
+    extra_config = Column(Text)
 
     database_id = Column(Integer, ForeignKey('dbs.id'))
     database = relationship('Database')
@@ -232,18 +233,18 @@ class Fetch(Model, AuditMixinNullable):
     partition_key_id = Column(Integer, ForeignKey('partition_keys.id'))
     partition_key = relationship('PartitionKey')
 
-    common_fetch_config_id = Column(Integer, ForeignKey('common_fetch_configs.id'))
-    common_fetch_config = relationship('CommonFetchConfig')
+    default_fetch_config_id = Column(Integer, ForeignKey('default_fetch_configs.id'))
+    default_fetch_config = relationship('DefaultFetchConfig')
 
     def __repr__(self):
         return self.hive_database + '.' + self.hive_table
 
     @property
-    def name(self):
+    def fetch_name(self):
         return self.hive_database + '.' + self.hive_table
 
     @property
-    def generate_run_script(self):
+    def generate_script(self):
         param_list = []
         sqlalchemy_uri_decrypted = make_url(self.database.sqlalchemy_uri)
         script_str = ('sqoop import --connect jdbc:{database_type}://{host}:{port}/{database_name} '
@@ -285,6 +286,10 @@ class Fetch(Model, AuditMixinNullable):
             param_list.append('-m {m}'.format(m=self.m))
         if self.outdir:
             param_list.append('--outdir {outdir}'.format(outdir=self.outdir))
+        if self.extra_config:
+            extra_config_list = str(self.extra_config).split(r'\n')
+            for extra_one in extra_config_list:
+                param_list.append(extra_one)
         script_str = '\\\n'.join(param_list)
         return script_str
 

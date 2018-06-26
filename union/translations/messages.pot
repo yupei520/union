@@ -8,12 +8,493 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2018-06-19 21:58+0800\n"
+"POT-Creation-Date: 2018-06-26 18:01+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.5.1\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: union/db_engine_specs.py:340 union/db_engine_specs.py:390
+#: union/db_engine_specs.py:419 union/db_engine_specs.py:444
+#: union/db_engine_specs.py:496 union/db_engine_specs.py:558
+#: union/db_engine_specs.py:622 union/db_engine_specs.py:1180
+#: union/db_engine_specs.py:1222 union/db_engine_specs.py:1277
+#: union/db_engine_specs.py:1321 union/db_engine_specs.py:1354
+#: union/db_engine_specs.py:1384 union/db_engine_specs.py:1402
+msgid "Time Column"
+msgstr ""
+
+#: union/db_engine_specs.py:341 union/db_engine_specs.py:391
+#: union/db_engine_specs.py:445 union/db_engine_specs.py:559
+#: union/db_engine_specs.py:623 union/db_engine_specs.py:1181
+#: union/db_engine_specs.py:1223 union/db_engine_specs.py:1322
+#: union/db_engine_specs.py:1385 union/db_engine_specs.py:1403
+msgid "second"
+msgstr ""
+
+#: union/db_engine_specs.py:343 union/db_engine_specs.py:392
+#: union/db_engine_specs.py:420 union/db_engine_specs.py:449
+#: union/db_engine_specs.py:563 union/db_engine_specs.py:626
+#: union/db_engine_specs.py:1184 union/db_engine_specs.py:1226
+#: union/db_engine_specs.py:1278 union/db_engine_specs.py:1323
+#: union/db_engine_specs.py:1355 union/db_engine_specs.py:1386
+#: union/db_engine_specs.py:1406
+msgid "minute"
+msgstr ""
+
+#: union/db_engine_specs.py:345 union/db_engine_specs.py:393
+#: union/db_engine_specs.py:421 union/db_engine_specs.py:454
+#: union/db_engine_specs.py:497 union/db_engine_specs.py:566
+#: union/db_engine_specs.py:629 union/db_engine_specs.py:1193
+#: union/db_engine_specs.py:1229 union/db_engine_specs.py:1287
+#: union/db_engine_specs.py:1324 union/db_engine_specs.py:1356
+#: union/db_engine_specs.py:1387 union/db_engine_specs.py:1409
+msgid "hour"
+msgstr ""
+
+#: union/db_engine_specs.py:347 union/db_engine_specs.py:394
+#: union/db_engine_specs.py:422 union/db_engine_specs.py:460
+#: union/db_engine_specs.py:500 union/db_engine_specs.py:569
+#: union/db_engine_specs.py:632 union/db_engine_specs.py:1196
+#: union/db_engine_specs.py:1232 union/db_engine_specs.py:1290
+#: union/db_engine_specs.py:1325 union/db_engine_specs.py:1357
+#: union/db_engine_specs.py:1388 union/db_engine_specs.py:1412
+msgid "day"
+msgstr ""
+
+#: union/db_engine_specs.py:349 union/db_engine_specs.py:395
+#: union/db_engine_specs.py:423 union/db_engine_specs.py:467
+#: union/db_engine_specs.py:501 union/db_engine_specs.py:570
+#: union/db_engine_specs.py:635 union/db_engine_specs.py:1199
+#: union/db_engine_specs.py:1235 union/db_engine_specs.py:1326
+#: union/db_engine_specs.py:1358 union/db_engine_specs.py:1389
+#: union/db_engine_specs.py:1415
+msgid "week"
+msgstr ""
+
+#: union/db_engine_specs.py:351 union/db_engine_specs.py:396
+#: union/db_engine_specs.py:424 union/db_engine_specs.py:470
+#: union/db_engine_specs.py:504 union/db_engine_specs.py:573
+#: union/db_engine_specs.py:638 union/db_engine_specs.py:1202
+#: union/db_engine_specs.py:1238 union/db_engine_specs.py:1293
+#: union/db_engine_specs.py:1327 union/db_engine_specs.py:1359
+#: union/db_engine_specs.py:1390 union/db_engine_specs.py:1419
+msgid "month"
+msgstr ""
+
+#: union/db_engine_specs.py:353 union/db_engine_specs.py:397
+#: union/db_engine_specs.py:425 union/db_engine_specs.py:473
+#: union/db_engine_specs.py:576 union/db_engine_specs.py:641
+#: union/db_engine_specs.py:1205 union/db_engine_specs.py:1241
+#: union/db_engine_specs.py:1296 union/db_engine_specs.py:1328
+#: union/db_engine_specs.py:1360 union/db_engine_specs.py:1391
+#: union/db_engine_specs.py:1422
+msgid "quarter"
+msgstr ""
+
+#: union/db_engine_specs.py:355 union/db_engine_specs.py:398
+#: union/db_engine_specs.py:426 union/db_engine_specs.py:478
+#: union/db_engine_specs.py:507 union/db_engine_specs.py:579
+#: union/db_engine_specs.py:652 union/db_engine_specs.py:1208
+#: union/db_engine_specs.py:1299 union/db_engine_specs.py:1330
+#: union/db_engine_specs.py:1361 union/db_engine_specs.py:1392
+#: union/db_engine_specs.py:1426
+msgid "year"
+msgstr ""
+
+#: union/db_engine_specs.py:510 union/db_engine_specs.py:644
+#: union/db_engine_specs.py:1244
+msgid "week_ending_saturday"
+msgstr ""
+
+#: union/db_engine_specs.py:513 union/db_engine_specs.py:648
+#: union/db_engine_specs.py:1248
+msgid "week_start_sunday"
+msgstr ""
+
+#: union/db_engine_specs.py:582
+msgid "week_start_monday"
+msgstr ""
+
+#: union/db_engine_specs.py:1187 union/db_engine_specs.py:1281
+msgid "5 minute"
+msgstr ""
+
+#: union/db_engine_specs.py:1190
+msgid "half hour"
+msgstr ""
+
+#: union/db_engine_specs.py:1284
+msgid "10 minute"
+msgstr ""
+
+#: union/templates/404.html:4
+msgid "Page not found"
+msgstr ""
+
+#: union/templates/appbuilder/navbar_right.html:40
+msgid "Profile"
+msgstr ""
+
+#: union/templates/appbuilder/navbar_right.html:41
+msgid "Logout"
+msgstr ""
+
+#: union/templates/appbuilder/navbar_right.html:46
+msgid "Login"
+msgstr ""
+
+#: union/templates/appbuilder/general/widgets/base_list.html:37
+msgid "Record Count"
+msgstr ""
+
+#: union/templates/appbuilder/general/widgets/base_list.html:46
+msgid "No records found"
+msgstr ""
+
+#: union/templates/appbuilder/general/widgets/search.html:6
+msgid "Add Filter"
+msgstr ""
+
+#: union/templates/union/models/database/macros.html:4
+msgid "Test Connection"
+msgstr ""
+
+#: union/views/core.py:59
+msgid "List Databases"
+msgstr ""
+
+#: union/views/core.py:60
+msgid "Show Database"
+msgstr ""
+
+#: union/views/core.py:61
+msgid "Add Database"
+msgstr ""
+
+#: union/views/core.py:62
+msgid "Edit Database"
+msgstr ""
+
+#: union/views/core.py:93
+msgid "Database"
+msgstr ""
+
+#: union/views/core.py:94
+msgid "Backend"
+msgstr ""
+
+#: union/views/core.py:95 union/views/core.py:150 union/views/core.py:205
+#: union/views/core.py:233 union/views/core.py:259 union/views/core.py:294
+msgid "Creator"
+msgstr ""
+
+#: union/views/core.py:96 union/views/core.py:151 union/views/core.py:206
+#: union/views/core.py:234 union/views/core.py:260 union/views/core.py:295
+msgid "Modified"
+msgstr ""
+
+#: union/views/core.py:97
+msgid "Last Changed"
+msgstr ""
+
+#: union/views/core.py:98
+msgid "SQLAlchemy URI"
+msgstr ""
+
+#: union/views/core.py:99
+msgid "Tables"
+msgstr ""
+
+#: union/views/core.py:100
+msgid "Created By"
+msgstr ""
+
+#: union/views/core.py:101
+msgid "Created On"
+msgstr ""
+
+#: union/views/core.py:102
+msgid "Changed By"
+msgstr ""
+
+#: union/views/core.py:103
+msgid "Changed On"
+msgstr ""
+
+#: union/views/core.py:121
+msgid "List Fetches"
+msgstr ""
+
+#: union/views/core.py:122
+msgid "Show Fetch"
+msgstr ""
+
+#: union/views/core.py:123
+msgid "Add Fetch"
+msgstr ""
+
+#: union/views/core.py:124
+msgid "Edit Fetch"
+msgstr ""
+
+#: union/views/core.py:134
+msgid "Sqoop Execute SQL"
+msgstr ""
+
+#: union/views/core.py:135
+msgid "Split of the column"
+msgstr ""
+
+#: union/views/core.py:136
+msgid "Hive Map Number"
+msgstr ""
+
+#: union/views/core.py:137
+msgid "Target path"
+msgstr ""
+
+#: union/views/core.py:138
+msgid "Job directory"
+msgstr ""
+
+#: union/views/core.py:139
+msgid "Hive Partition Key"
+msgstr ""
+
+#: union/views/core.py:140
+msgid "Overwrite the data"
+msgstr ""
+
+#: union/views/core.py:141
+msgid "Use the direct import fast path"
+msgstr ""
+
+#: union/views/core.py:142
+msgid "Delete target path"
+msgstr ""
+
+#: union/views/core.py:143
+msgid "Hive output directory"
+msgstr ""
+
+#: union/views/core.py:144
+msgid "Extra hive configuration"
+msgstr ""
+
+#: union/views/core.py:147
+msgid "Fetch"
+msgstr ""
+
+#: union/views/core.py:148
+msgid "DataBase"
+msgstr ""
+
+#: union/views/core.py:149
+msgid "Table Name"
+msgstr ""
+
+#: union/views/core.py:152
+msgid "Hive Database"
+msgstr ""
+
+#: union/views/core.py:153
+msgid "Hive Table"
+msgstr ""
+
+#: union/views/core.py:154
+msgid "Query"
+msgstr ""
+
+#: union/views/core.py:155
+msgid "Split By"
+msgstr ""
+
+#: union/views/core.py:156
+msgid "M"
+msgstr ""
+
+#: union/views/core.py:157
+msgid "Target Dir"
+msgstr ""
+
+#: union/views/core.py:158
+msgid "File Dir"
+msgstr ""
+
+#: union/views/core.py:159
+msgid "Partition Key"
+msgstr ""
+
+#: union/views/core.py:160
+msgid "Default Fetch Config"
+msgstr ""
+
+#: union/views/core.py:161
+msgid "Hive Overwrite"
+msgstr ""
+
+#: union/views/core.py:162
+msgid "Direct"
+msgstr ""
+
+#: union/views/core.py:163
+msgid "Delete Targer Dir"
+msgstr ""
+
+#: union/views/core.py:164
+msgid "Outdir"
+msgstr ""
+
+#: union/views/core.py:165
+msgid "Extra Config"
+msgstr ""
+
+#: union/views/core.py:166
+msgid "Generate Script"
+msgstr ""
+
+#: union/views/core.py:186
+msgid "List PartitionValues"
+msgstr ""
+
+#: union/views/core.py:187
+msgid "Show PartitionValue"
+msgstr ""
+
+#: union/views/core.py:188
+msgid "Add PartitionValue"
+msgstr ""
+
+#: union/views/core.py:189
+msgid "Edit PartitionValue"
+msgstr ""
+
+#: union/views/core.py:196
+#, python-format
+msgid "Time format Such as %Y-%m-%d"
+msgstr ""
+
+#: union/views/core.py:197
+msgid "Days before the date"
+msgstr ""
+
+#: union/views/core.py:198
+msgid "Slice format Such as 2:4"
+msgstr ""
+
+#: union/views/core.py:201
+msgid "Partition Value Name"
+msgstr ""
+
+#: union/views/core.py:202
+msgid "Format Date"
+msgstr ""
+
+#: union/views/core.py:203
+msgid "Forward Days"
+msgstr ""
+
+#: union/views/core.py:204
+msgid "Slice Format"
+msgstr ""
+
+#: union/views/core.py:207
+msgid "Real Value"
+msgstr ""
+
+#: union/views/core.py:220
+msgid "List PartitionKeys"
+msgstr ""
+
+#: union/views/core.py:221
+msgid "Show PartitionKey"
+msgstr ""
+
+#: union/views/core.py:222
+msgid "Add PartitionKey"
+msgstr ""
+
+#: union/views/core.py:223
+msgid "Edit PartitionKey"
+msgstr ""
+
+#: union/views/core.py:231
+msgid "Partition Field"
+msgstr ""
+
+#: union/views/core.py:232
+msgid "Partition Value"
+msgstr ""
+
+#: union/views/core.py:247
+msgid "List FileDirs"
+msgstr ""
+
+#: union/views/core.py:248
+msgid "Show FileDir"
+msgstr ""
+
+#: union/views/core.py:249
+msgid "Add FileDir"
+msgstr ""
+
+#: union/views/core.py:250
+msgid "Edit FileDir"
+msgstr ""
+
+#: union/views/core.py:258
+msgid "Dir Name"
+msgstr ""
+
+#: union/views/core.py:273
+msgid "List DefaultFetchConfigs"
+msgstr ""
+
+#: union/views/core.py:274
+msgid "Show DefaultFetchConfig"
+msgstr ""
+
+#: union/views/core.py:275
+msgid "Add DefaultFetchConfig"
+msgstr ""
+
+#: union/views/core.py:276
+msgid "Edit DefaultFetchConfig"
+msgstr ""
+
+#: union/views/core.py:284
+msgid "The separator between fields"
+msgstr ""
+
+#: union/views/core.py:285
+msgid "Null value of character column"
+msgstr ""
+
+#: union/views/core.py:286
+msgid "Null values for non-character columns"
+msgstr ""
+
+#: union/views/core.py:289
+msgid "Default Fetch Name"
+msgstr ""
+
+#: union/views/core.py:290
+msgid "Fields Terminated By"
+msgstr ""
+
+#: union/views/core.py:291
+msgid "Null String"
+msgstr ""
+
+#: union/views/core.py:292
+msgid "Hive Delims Replacement"
+msgstr ""
+
+#: union/views/core.py:293
+msgid "Null Non String"
+msgstr ""
 

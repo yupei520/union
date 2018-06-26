@@ -81,17 +81,17 @@ AUTH_TYPE = AUTH_DB
 # Setup default language
 BABEL_DEFAULT_LOCALE = 'en'
 # Your application default translation path
-BABEL_DEFAULT_FOLDER = 'translations'
+BABEL_DEFAULT_FOLDER = 'union/translations'
 # The allowed translation for you union
 LANGUAGES = {
     'en': {'flag':'gb', 'name':'English'},
-    'pt': {'flag':'pt', 'name':'Portuguese'},
-    'pt_BR': {'flag':'br', 'name': 'Pt Brazil'},
-    'es': {'flag':'es', 'name':'Spanish'},
-    'de': {'flag':'de', 'name':'German'},
+    # 'pt': {'flag':'pt', 'name':'Portuguese'},
+    # 'pt_BR': {'flag':'br', 'name': 'Pt Brazil'},
+    # 'es': {'flag':'es', 'name':'Spanish'},
+    # 'de': {'flag':'de', 'name':'German'},
     'zh': {'flag':'cn', 'name':'Chinese'},
-    'ru': {'flag':'ru', 'name':'Russian'},
-    'pl': {'flag':'pl', 'name':'Polish'}
+    # 'ru': {'flag':'ru', 'name':'Russian'},
+    # 'pl': {'flag':'pl', 'name':'Polish'}
 }
 #---------------------------------------------------
 # Image and file configuration
