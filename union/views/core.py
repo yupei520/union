@@ -167,7 +167,11 @@ class FetchView(UnionModelView):
     }
 
     def pre_add(self, obj):
+        obj.fetch_name = obj.name
         create_fetch_file(obj)
+
+    def pre_update(self, obj):
+        self.pre_add(obj)
 
     def pre_delete(self, obj):
         # delete_fetch_file(obj)
@@ -356,6 +360,12 @@ class Union(BaseUnionView):
                 'Connection failed!\n\n'
                 'The error message returned was:\n{}').format(e)
             )
+
+    @api
+    @expose('/run_script/<fetch_name>', methods=['GET', 'POST'])
+    def run_script(self, fetch_name):
+        fetch_one = db.session.query(models.Fetch).filter_by(fetch_name=fetch_name).first()
+        return fetch_one.generate_script
 
 
 appbuilder.add_view_no_menu(Union)

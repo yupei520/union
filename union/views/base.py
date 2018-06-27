@@ -59,7 +59,7 @@ class ListWidgetWithCheckboxes(ListWidget):
     """An alternative to list view that renders Boolean
 
     Works in conjunction with the `checkbox` view."""
-    template = 'union/fab_overrides/list_with_checkboxes.html'
+    template = 'union.py/fab_overrides/list_with_checkboxes.html'
 
 def get_error_msg():
     if conf.get('SHOW_STACKTRACE'):

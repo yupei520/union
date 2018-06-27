@@ -608,7 +608,7 @@ arr-flatten@^1.0.1, arr-flatten@^1.1.0:
 
 arr-union@^3.1.0:
   version "3.1.0"
-  resolved "https://registry.yarnpkg.com/arr-union/-/arr-union-3.1.0.tgz#e39b09aea9def866a8f206e288af63919bae39c4"
+  resolved "https://registry.yarnpkg.com/arr-union.py/-/arr-union.py-3.1.0.tgz#e39b09aea9def866a8f206e288af63919bae39c4"
 
 array-differ@^1.0.0:
   version "1.0.0"
@@ -638,7 +638,7 @@ array-index@^1.0.0:
 
 array-union@^1.0.1:
   version "1.0.2"
-  resolved "https://registry.yarnpkg.com/array-union/-/array-union-1.0.2.tgz#9a34410e4f4e3da23dea375be5be70f24778ec39"
+  resolved "https://registry.yarnpkg.com/array-union.py/-/array-union.py-1.0.2.tgz#9a34410e4f4e3da23dea375be5be70f24778ec39"
   dependencies:
     array-uniq "^1.0.1"
 
@@ -1916,7 +1916,7 @@ cache-base@^1.0.1:
     isobject "^3.0.1"
     set-value "^2.0.0"
     to-object-path "^0.3.0"
-    union-value "^1.0.0"
+    union.py-value "^1.0.0"
     unset-value "^1.0.0"
 
 cacheable-request@^2.1.1:
@@ -2155,7 +2155,7 @@ class-utils@^0.3.5:
   version "0.3.6"
   resolved "https://registry.yarnpkg.com/class-utils/-/class-utils-0.3.6.tgz#f93369ae8b9a7ce02fd41faad0ca83033190c463"
   dependencies:
-    arr-union "^3.1.0"
+    arr-union.py "^3.1.0"
     define-property "^0.2.5"
     isobject "^3.0.0"
     static-extend "^0.1.1"
@@ -4528,7 +4528,7 @@ globby@^5.0.0:
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/globby/-/globby-5.0.0.tgz#ebd84667ca0dbb330b99bcfc68eac2bc54370e0d"
   dependencies:
-    array-union "^1.0.1"
+    array-union.py "^1.0.1"
     arrify "^1.0.0"
     glob "^7.0.3"
     object-assign "^4.0.1"
@@ -4539,7 +4539,7 @@ globby@^8.0.0, globby@^8.0.1:
   version "8.0.1"
   resolved "https://registry.yarnpkg.com/globby/-/globby-8.0.1.tgz#b5ad48b8aa80b35b814fc1281ecc851f1d2b5b50"
   dependencies:
-    array-union "^1.0.1"
+    array-union.py "^1.0.1"
     dir-glob "^2.0.0"
     fast-glob "^2.0.2"
     glob "^7.1.2"
@@ -6245,7 +6245,7 @@ lodash.throttle@^4.1.1:
 
 lodash.union@~4.6.0:
   version "4.6.0"
-  resolved "https://registry.yarnpkg.com/lodash.union/-/lodash.union-4.6.0.tgz#48bb5088409f16f1821666641c44dd1aaae3cd88"
+  resolved "https://registry.yarnpkg.com/lodash.union.py/-/lodash.union.py-4.6.0.tgz#48bb5088409f16f1821666641c44dd1aaae3cd88"
 
 lodash.uniq@^4.5.0, lodash.uniq@~4.5.0:
   version "4.5.0"
@@ -6757,7 +6757,7 @@ multimatch@^2.0.0:
   resolved "https://registry.yarnpkg.com/multimatch/-/multimatch-2.1.0.tgz#9c7906a22fb4c02919e2f5f75161b4cdbd4b2a2b"
   dependencies:
     array-differ "^1.0.0"
-    array-union "^1.0.1"
+    array-union.py "^1.0.1"
     arrify "^1.0.0"
     minimatch "^3.0.0"
 
@@ -7221,7 +7221,7 @@ npm@^3, npm@^3.10.6:
     lockfile "~1.0.2"
     lodash._baseuniq "~4.6.0"
     lodash.clonedeep "~4.5.0"
-    lodash.union "~4.6.0"
+    lodash.union.py "~4.6.0"
     lodash.uniq "~4.5.0"
     lodash.without "~4.4.0"
     mkdirp "~0.5.1"
@@ -7315,7 +7315,7 @@ npm@^6.1.0:
     lockfile "^1.0.4"
     lodash._baseuniq "~4.6.0"
     lodash.clonedeep "~4.5.0"
-    lodash.union "~4.6.0"
+    lodash.union.py "~4.6.0"
     lodash.uniq "~4.5.0"
     lodash.without "~4.4.0"
     lru-cache "^4.1.3"
@@ -7361,7 +7361,7 @@ npm@^6.1.0:
     sha "~2.0.1"
     slide "~1.1.6"
     sorted-object "~2.0.1"
-    sorted-union-stream "~2.1.3"
+    sorted-union.py-stream "~2.1.3"
     ssri "^6.0.0"
     strip-ansi "~4.0.0"
     tar "^4.4.1"
@@ -9735,7 +9735,7 @@ sorted-object@~2.0.1:
 
 sorted-union-stream@~2.1.3:
   version "2.1.3"
-  resolved "https://registry.yarnpkg.com/sorted-union-stream/-/sorted-union-stream-2.1.3.tgz#c7794c7e077880052ff71a8d4a2dbb4a9a638ac7"
+  resolved "https://registry.yarnpkg.com/sorted-union.py-stream/-/sorted-union.py-stream-2.1.3.tgz#c7794c7e077880052ff71a8d4a2dbb4a9a638ac7"
   dependencies:
     from2 "^1.3.0"
     stream-iterate "^1.1.0"
@@ -10422,9 +10422,9 @@ underscore@~1.6.0:
 
 union-value@^1.0.0:
   version "1.0.0"
-  resolved "https://registry.yarnpkg.com/union-value/-/union-value-1.0.0.tgz#5c71c34cb5bad5dcebe3ea0cd08207ba5aa1aea4"
+  resolved "https://registry.yarnpkg.com/union.py-value/-/union.py-value-1.0.0.tgz#5c71c34cb5bad5dcebe3ea0cd08207ba5aa1aea4"
   dependencies:
-    arr-union "^3.1.0"
+    arr-union.py "^3.1.0"
     get-value "^2.0.6"
     is-extendable "^0.1.1"
     set-value "^0.4.3"

@@ -1019,7 +1019,7 @@ msgstr "日期格式"
 
 #: union/views/core.py:203
 msgid "Forward Days"
-msgstr "前几数"
+msgstr "前几天"
 
 #: union/views/core.py:204
 msgid "Slice Format"
@@ -1121,3 +1121,23 @@ msgstr "Hive Delims Replacement"
 msgid "Null Non String"
 msgstr "非字符串空值"
 
+msgid "Databases"
+msgstr "数据库"
+
+msgid "Fetches"
+msgstr "STG"
+
+msgid "PartitionValues"
+msgstr "Hive分区值"
+
+msgid "PartitionKeys"
+msgstr "Hive分区键"
+
+msgid "FileDirs"
+msgstr "Job目录"
+
+msgid "DefaultFetchConfigs"
+msgstr "默认Hive配置"
+
+msgid "Extract"
+msgstr "抽取层"

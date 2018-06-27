@@ -79,10 +79,10 @@ AUTH_TYPE = AUTH_DB
 # Babel config for translations
 #---------------------------------------------------
 # Setup default language
-BABEL_DEFAULT_LOCALE = 'en'
+BABEL_DEFAULT_LOCALE = 'zh'
 # Your application default translation path
 BABEL_DEFAULT_FOLDER = 'union/translations'
-# The allowed translation for you union
+# The allowed translation for you union.py
 LANGUAGES = {
     'en': {'flag':'gb', 'name':'English'},
     # 'pt': {'flag':'pt', 'name':'Portuguese'},
@@ -97,10 +97,10 @@ LANGUAGES = {
 # Image and file configuration
 #---------------------------------------------------
 # The file upload folder, when using models with files
-UPLOAD_FOLDER = BASE_DIR + '/union/static/uploads/'
+UPLOAD_FOLDER = BASE_DIR + '/union.py/static/uploads/'
 
 # The image upload folder, when using models with images
-IMG_UPLOAD_FOLDER = BASE_DIR + '/union/static/uploads/'
+IMG_UPLOAD_FOLDER = BASE_DIR + '/union.py/static/uploads/'
 
 # The image upload url, when using models with images
 IMG_UPLOAD_URL = '/static/uploads/'

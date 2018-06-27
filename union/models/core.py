@@ -7,6 +7,7 @@ from __future__ import unicode_literals
 
 import logging
 import datetime
+import re
 
 from copy import copy, deepcopy
 import sqlalchemy as sqla
@@ -27,7 +28,7 @@ from sqlalchemy.pool import NullPool
 from sqlalchemy.schema import UniqueConstraint
 from sqlalchemy_utils import EncryptedType
 
-from union import app, db_engine_specs, security_manager, utils
+from union import app, db, db_engine_specs, security_manager, utils
 
 config = app.config
 custom_password_store = config.get('SQLALCHEMY_CUSTOM_PASSWORD_STORE')
@@ -175,10 +176,11 @@ class PartitionValue(Model, AuditMixinNullable):
     def real_value(self):
         real_value = datetime.date.today()
         if self.forward_days:
-            real_value = real_value - datetime.timedelta(days=self.forward_days)
+            real_value = real_value + datetime.timedelta(days=self.forward_days)
         real_value = real_value.strftime(self.format_date)
         if self.slice_format:
-            real_value = real_value[self.slice_format]
+            value_list = [int(x) for x in self.slice_format.split(":")]
+            real_value = real_value[value_list[0]:value_list[1]]
         return real_value
 
 
@@ -211,6 +213,7 @@ class Fetch(Model, AuditMixinNullable):
     """Fetch table"""
     __tablename__ = 'fetchs'
     id = Column(Integer, primary_key=True)
+    fetch_name = Column(String(192))
     table_name = Column(String(128))
     hive_database = Column(String(64))
     hive_table = Column(String(128))
@@ -240,8 +243,19 @@ class Fetch(Model, AuditMixinNullable):
         return self.hive_database + '.' + self.hive_table
 
     @property
-    def fetch_name(self):
+    def name(self):
         return self.hive_database + '.' + self.hive_table
+
+    def param_real(self, param_str):
+        param_str = param_str.replace(r'${', r'{')
+        pattern = re.compile(r'\{([^\s]+)\}')
+        param_list = re.findall(pattern, param_str)
+        param_map = {}
+        for param in param_list:
+            partition_value = db.session.query(PartitionValue).filter_by(par_val_name=param).first()
+            param_map[param] = partition_value.real_value
+        param_str = param_str.format(**param_map)
+        return param_str
 
     @property
     def generate_script(self):
@@ -255,10 +269,14 @@ class Fetch(Model, AuditMixinNullable):
             password=sqlalchemy_uri_decrypted.password))
         param_list.append(script_str)
         if self.query:
-            param_list.append('--query "{sql}"'.format(sql=self.query))
+            query = self.param_real(self.query)
+            param_list.append('--query "{sql}"'.format(sql=query))
         if self.split_by:
             param_list.append('--split-by "{split_by}"'.format(split_by=self.split_by))
-        param_list.append('--delete-target-dir ')
+        if self.delete_targer_dir:
+            param_list.append('--delete-target-dir {del_dir}'.format(del_dir=self.delete_targer_dir))
+        else:
+            param_list.append('--delete-target-dir ')
         if self.target_dir:
             param_list.append('--target-dir {target_dir}'.format(target_dir=self.target_dir))
         if self.hive_overwrite:
@@ -268,13 +286,13 @@ class Fetch(Model, AuditMixinNullable):
         if self.hive_table and self.hive_database:
             param_list.append('--hive-table {hive_database}.{hive_table}'
                               .format(hive_database=self.hive_database, hive_table=self.hive_table))
-        fileds_by = self.common_fetch_config.fields_terminated_by
+        fileds_by = self.default_fetch_config.fields_terminated_by
         if fileds_by:
             param_list.append("--fields-terminated-by '{fileds_by}'".format(fileds_by=fileds_by))
-        null_string = self.common_fetch_config.null_string
+        null_string = self.default_fetch_config.null_string
         if null_string:
             param_list.append("--null-string '{null_string}'".format(null_string=null_string))
-        hive_delims = self.common_fetch_config.hive_delims_replacement
+        hive_delims = self.default_fetch_config.hive_delims_replacement
         if hive_delims:
             param_list.append("--hive-delims-replacement '{hive_delims}'".format(hive_delims=hive_delims))
         hive_par_key = self.partition_key.partition_field
