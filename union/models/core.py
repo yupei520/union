@@ -8,7 +8,7 @@ from __future__ import unicode_literals
 import logging
 import datetime
 import re
-
+import json
 from copy import copy, deepcopy
 import sqlalchemy as sqla
 from flask_appbuilder import Model
@@ -29,6 +29,7 @@ from sqlalchemy.schema import UniqueConstraint
 from sqlalchemy_utils import EncryptedType
 
 from union import app, db, db_engine_specs, security_manager, utils
+from urllib import parse
 
 config = app.config
 custom_password_store = config.get('SQLALCHEMY_CUSTOM_PASSWORD_STORE')
@@ -246,19 +247,20 @@ class Fetch(Model, AuditMixinNullable):
     def name(self):
         return self.hive_database + '.' + self.hive_table
 
-    def param_real(self, param_str):
-        param_str = param_str.replace(r'${', r'{')
-        pattern = re.compile(r'\{([^\s]+)\}')
-        param_list = re.findall(pattern, param_str)
-        param_map = {}
-        for param in param_list:
-            partition_value = db.session.query(PartitionValue).filter_by(par_val_name=param).first()
-            param_map[param] = partition_value.real_value
-        param_str = param_str.format(**param_map)
-        return param_str
+    def get_run_url(self, base_url='/union/run', overrides=None):
+        overrides = overrides or {}
+        form_data = {'fetch_id': self.id}
+        form_data.update(overrides)
+        params = parse.quote(json.dump(form_data))
+        return (
+            '{base_url}/?form_data={params}'.format(**locals())
+        )
 
     @property
-    def generate_script(self):
+    def fetch_url(self):
+        return self.get_run_url()
+
+    def origin_script(self):
         param_list = []
         sqlalchemy_uri_decrypted = make_url(self.database.sqlalchemy_uri)
         script_str = ('sqoop import --connect jdbc:{database_type}://{host}:{port}/{database_name} '
@@ -269,8 +271,7 @@ class Fetch(Model, AuditMixinNullable):
             password=sqlalchemy_uri_decrypted.password))
         param_list.append(script_str)
         if self.query:
-            query = self.param_real(self.query)
-            param_list.append('--query "{sql}"'.format(sql=query))
+            param_list.append('--query "{sql}"'.format(sql=self.query))
         if self.split_by:
             param_list.append('--split-by "{split_by}"'.format(split_by=self.split_by))
         if self.delete_targer_dir:
@@ -296,10 +297,10 @@ class Fetch(Model, AuditMixinNullable):
         if hive_delims:
             param_list.append("--hive-delims-replacement '{hive_delims}'".format(hive_delims=hive_delims))
         hive_par_key = self.partition_key.partition_field
-        hive_par_value = self.partition_key.partition_value.real_value
-        if hive_par_key and hive_par_value:
-            param_list.append('--hive-partition-key {hive_par_key} --hive-partition-value {hive_par_value}'
-                              .format(hive_par_key=hive_par_key, hive_par_value=hive_par_value))
+        par_val_name = self.partition_key.partition_value.par_val_name
+        if hive_par_key and par_val_name:
+            param_list.append("--hive-partition-key {hive_par_key} --hive-partition-value '{{{par_val_name}}}'"
+                              .format(hive_par_key=hive_par_key, par_val_name=par_val_name))
         if self.m:
             param_list.append('-m {m}'.format(m=self.m))
         if self.outdir:
@@ -309,5 +310,22 @@ class Fetch(Model, AuditMixinNullable):
             for extra_one in extra_config_list:
                 param_list.append(extra_one)
         script_str = '\\\n'.join(param_list)
+        return script_str
+
+    def param_dict(self, param_str):
+        param_str = param_str.replace(r'${', r'{')
+        pattern = re.compile(r'\{([^\s]+)\}')
+        param_list = re.findall(pattern, param_str)
+        param_list = set(param_list)
+        param_map = {}
+        for param in param_list:
+            partition_value = db.session.query(PartitionValue).filter_by(par_val_name=param).first()
+            param_map[param] = partition_value.real_value
+        return param_map
+
+    @property
+    def generate_script(self):
+        script_str = self.origin_script()
+        script_str = script_str.format(**self.param_dict(script_str))
         return script_str
 

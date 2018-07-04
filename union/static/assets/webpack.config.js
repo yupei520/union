@@ -17,6 +17,7 @@ const config = {
   entry: {
     theme: APP_DIR + '/src/theme.js',
     common: APP_DIR + '/src/common.js',
+    runScript: ['babel-polyfill', APP_DIR + '/src/runScript/index.jsx'],
   },
   output: {
     path: BUILD_DIR,

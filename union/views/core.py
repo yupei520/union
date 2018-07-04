@@ -362,10 +362,39 @@ class Union(BaseUnionView):
             )
 
     @api
-    @expose('/run_script/<fetch_name>', methods=['GET', 'POST'])
+    @expose('/runScript/<fetch_name>', methods=['GET', 'POST'])
     def run_script(self, fetch_name):
         fetch_one = db.session.query(models.Fetch).filter_by(fetch_name=fetch_name).first()
         return fetch_one.generate_script
+
+
+    def get_form_data(self):
+        # et form data from url
+        if request.args.get('form_data'):
+            form_data = request.args.get('form_data')
+        elif request.form.get('form_data'):
+            # Supporting POST as well as get
+            form_data = request.form.get('form_data')
+        else:
+            form_data = '{}'
+
+        d = json.load(form_data)
+        return d
+
+    @expose('/run')
+    def run(self):
+        form_data = self.get_form_data()
+        fetch_id = form_data.get('fetch_id')
+
+        if fetch_id:
+            fet = db.session.query(models.Fetch).filter_by(id=fetch_id).first()
+            param_map = fet.param_dict(fet.origin_script())
+            bootstrap_data = form_data.update(param_map)
+        return self.render_template(
+            "union/basic.html",
+            bootstrap_data=json.dumps(bootstrap_data),
+            entry='runScript'
+        )
 
 
 appbuilder.add_view_no_menu(Union)
