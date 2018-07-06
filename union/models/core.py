@@ -11,6 +11,7 @@ import re
 import json
 from copy import copy, deepcopy
 import sqlalchemy as sqla
+from flask import escape, Markup
 from flask_appbuilder import Model
 from union.models.helpers import AuditMixinNullable
 
@@ -251,7 +252,7 @@ class Fetch(Model, AuditMixinNullable):
         overrides = overrides or {}
         form_data = {'fetch_id': self.id}
         form_data.update(overrides)
-        params = parse.quote(json.dump(form_data))
+        params = parse.quote(json.dumps(form_data))
         return (
             '{base_url}/?form_data={params}'.format(**locals())
         )
@@ -259,6 +260,12 @@ class Fetch(Model, AuditMixinNullable):
     @property
     def fetch_url(self):
         return self.get_run_url()
+
+    @property
+    def fetch_link(self):
+        url = self.fetch_url
+        name = escape(self.fetch_name)
+        return Markup('<a href="{url}">{name}</a >'.format(**locals()))
 
     def origin_script(self):
         param_list = []

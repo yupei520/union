@@ -123,7 +123,7 @@ class FetchView(UnionModelView):
     add_title = _('Add Fetch')
     edit_title = _('Edit Fetch')
 
-    list_columns = ['fetch_name', 'database', 'table_name', 'creator', 'modified']
+    list_columns = ['fetch_link', 'database', 'table_name', 'creator', 'modified']
     add_columns = ['database', 'table_name', 'hive_database', 'hive_table', 'query', 'split_by', 'm', 'target_dir',
                    'file_dir', 'partition_key', 'default_fetch_config', 'hive_overwrite', 'direct',
                    'delete_targer_dir', 'outdir', 'extra_config']
@@ -377,21 +377,19 @@ class Union(BaseUnionView):
             form_data = request.form.get('form_data')
         else:
             form_data = '{}'
-
-        d = json.load(form_data)
+        d = json.loads(form_data)
         return d
 
-    @expose('/run')
+    @expose('/run/')
     def run(self):
-        form_data = self.get_form_data()
-        fetch_id = form_data.get('fetch_id')
-
+        bootstrap_data = self.get_form_data()
+        fetch_id = bootstrap_data.get('fetch_id')
         if fetch_id:
             fet = db.session.query(models.Fetch).filter_by(id=fetch_id).first()
             param_map = fet.param_dict(fet.origin_script())
-            bootstrap_data = form_data.update(param_map)
+            bootstrap_data.update(param_map)
         return self.render_template(
-            "union/basic.html",
+            "union/run_script.html",
             bootstrap_data=json.dumps(bootstrap_data),
             entry='runScript'
         )
